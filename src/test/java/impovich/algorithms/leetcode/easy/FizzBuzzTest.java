@@ -1,5 +1,6 @@
-package impovich.algorithms.easy;
+package impovich.algorithms.leetcode.easy;
 
+import impovich.algorithms.leetcode.easy.FizzBuzz;
 import org.junit.Test;
 
 import java.util.List;

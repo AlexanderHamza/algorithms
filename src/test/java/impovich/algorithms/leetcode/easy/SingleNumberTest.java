@@ -1,6 +1,7 @@
-package impovich.algorithms.easy;
+package impovich.algorithms.leetcode.easy;
 
 import com.google.common.base.Stopwatch;
+import impovich.algorithms.leetcode.easy.SingleNumber;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

@@ -1,4 +1,4 @@
-package impovich.algorithms.helpers;
+package impovich.algorithms.leetcode.helpers;
 
 /**
  * @author Alexander Hamza

@@ -1,6 +1,6 @@
-package impovich.algorithms.easy;
+package impovich.algorithms.leetcode.easy;
 
-import impovich.algorithms.helpers.TreeNode;
+import impovich.algorithms.leetcode.helpers.TreeNode;
 import org.junit.BeforeClass;
 import org.junit.Test;
 

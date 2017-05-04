@@ -1,4 +1,4 @@
-package impovich.algorithms.easy;
+package impovich.algorithms.leetcode.easy;
 
 
 /*

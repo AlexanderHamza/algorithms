@@ -1,4 +1,4 @@
-package impovich.algorithms.easy;
+package impovich.algorithms.leetcode.easy;
 
 /*
 https://leetcode.com/problems/reverse-string/#/description
