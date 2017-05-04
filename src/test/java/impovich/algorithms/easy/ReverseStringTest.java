@@ -12,38 +12,37 @@ import static org.hamcrest.core.IsEqual.equalTo;
  * @author Alexander Hamza
  *         created 04/05/2017.
  */
-public class SingleNumberTest {
+public class ReverseStringTest {
 
-    private static SingleNumber singleNumber;
-    private static int[] numbers = {12, 1, 2, 5, 2, 51, 1, 5, 6, 12, 6, 0, 15, 15, 0};
-    private static int expected = 51;
+    private static ReverseString reverseString;
+    private static String input = "hello";
+    private static String expected = "olleh";
 
     @BeforeClass
     public static void setUp() {
-        singleNumber = new SingleNumber();
+        reverseString = new ReverseString();
     }
 
     @Test
-    public void singleNumber() {
+    public void reverseString() {
         Stopwatch stopwatch = Stopwatch.createStarted();
-        final int executionResult = singleNumber.singleNumber(numbers);
+        final String executionResult = reverseString.reverseString(input);
         stopwatch.stop();
 
         assertThat(executionResult, equalTo(expected));
 
-        System.out.println("Time elapsed for singleNumber(...) is "+ stopwatch.elapsed(NANOSECONDS));
-
+        System.out.println("Time elapsed for reverseString(...) is "+ stopwatch.elapsed(NANOSECONDS));
     }
 
     @Test
-    public void singleNumberWithOutExtraMemory() {
+    public void reverseStringRecursively() {
         Stopwatch stopwatch = Stopwatch.createStarted();
-        final int executionResult = singleNumber.singleNumberWithOutExtraMemory(numbers);
+        final String executionResult = reverseString.reverseStringRecursively(input);
         stopwatch.stop();
 
         assertThat(executionResult, equalTo(expected));
 
-        System.out.println("Time elapsed for singleNumberWithOutExtraMemory(...) is "+ stopwatch.elapsed(NANOSECONDS));
+        System.out.println("Time elapsed for reverseStringRecursively(...) is "+ stopwatch.elapsed(NANOSECONDS));
     }
 
 }
