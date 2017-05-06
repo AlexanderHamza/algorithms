@@ -6,9 +6,9 @@ import impovich.algorithms.leetcode.helpers.TreeNode;
  * @author Alexander Hamza
  *         created 04/05/2017.
  */
-public class AbstractBinaryTreeTest {
+public abstract class BinaryTreeFactory {
 
-    protected TreeNode treeNodeWithMinDepthThreeMaxDepthSix() {
+    public static TreeNode treeNodeWithMinDepthThreeMaxDepthSix() {
         TreeNode root = treeNodeWithMinMaxDepthThree();
         final TreeNode secondRight = new TreeNode(1);
         root.setRight(secondRight);
@@ -23,7 +23,7 @@ public class AbstractBinaryTreeTest {
         return root;
     }
 
-    protected TreeNode treeNodeWithMinMaxDepthThree() {
+    public static TreeNode treeNodeWithMinMaxDepthThree() {
         final TreeNode root = treeNodeWithMinMaxDepthOne();
         final TreeNode firstLeft = new TreeNode(1);
         root.setLeft(firstLeft);
@@ -32,7 +32,7 @@ public class AbstractBinaryTreeTest {
         return root;
     }
 
-    protected TreeNode treeNodeWithMinMaxDepthOne() {
+    public static TreeNode treeNodeWithMinMaxDepthOne() {
         return new TreeNode(1);
     }
 }

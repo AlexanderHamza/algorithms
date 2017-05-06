@@ -1,9 +1,13 @@
 package impovich.algorithms.leetcode.easy;
 
 import impovich.algorithms.leetcode.helpers.TreeNode;
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
+import static impovich.algorithms.leetcode.easy.BinaryTreeFactory.*;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
 
@@ -11,7 +15,8 @@ import static org.hamcrest.core.IsEqual.equalTo;
  * @author Alexander Hamza
  *         created 04/05/2017.
  */
-public class MaximumDepthOfBinaryTreeTest extends AbstractBinaryTreeTest {
+@RunWith(JUnitParamsRunner.class)
+public class MaximumDepthOfBinaryTreeTest {
 
     private static MaximumDepthOfBinaryTree maximumDepthOfBinaryTree;
 
@@ -20,28 +25,19 @@ public class MaximumDepthOfBinaryTreeTest extends AbstractBinaryTreeTest {
         maximumDepthOfBinaryTree = new MaximumDepthOfBinaryTree();
     }
 
-    @Test
-    public void maxDepthOne() {
-        TreeNode input = treeNodeWithMinMaxDepthOne();
-        final int executionResult = maximumDepthOfBinaryTree.maxDepth(input);
-
-        assertThat(executionResult, equalTo(1));
+    public static Object[] data() {
+        return new Object[][]{
+                {treeNodeWithMinMaxDepthOne(), 1},
+                {treeNodeWithMinMaxDepthThree(), 3},
+                {treeNodeWithMinDepthThreeMaxDepthSix(), 6}
+        };
     }
 
     @Test
-    public void maxDepthTree() {
-        TreeNode input = treeNodeWithMinMaxDepthThree();
+    @Parameters(method = "data")
+    public void maxDepth(TreeNode input, int expected) {
         final int executionResult = maximumDepthOfBinaryTree.maxDepth(input);
 
-        assertThat(executionResult, equalTo(3));
+        assertThat(executionResult, equalTo(expected));
     }
-
-    @Test
-    public void maxDepthSix() {
-        TreeNode input = treeNodeWithMinDepthThreeMaxDepthSix();
-        final int executionResult = maximumDepthOfBinaryTree.maxDepth(input);
-
-        assertThat(executionResult, equalTo(6));
-    }
-
 }

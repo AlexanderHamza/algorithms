@@ -1,7 +1,10 @@
 package impovich.algorithms.leetcode.easy;
 
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.IsEqual.equalTo;
@@ -10,6 +13,7 @@ import static org.hamcrest.core.IsEqual.equalTo;
  * @author Alexander Hamza
  *         created 04/05/2017.
  */
+@RunWith(JUnitParamsRunner.class)
 public class HammingDistanceTest {
 
     private static HammingDistance hammingDistance;
@@ -19,25 +23,20 @@ public class HammingDistanceTest {
         hammingDistance = new HammingDistance();
     }
 
-    @Test
-    public void hammingDistanceTwo() {
-        final int executionResult = hammingDistance.hammingDistance(1, 4);
-
-        assertThat(executionResult, equalTo(2));
+    public static Object[] data() {
+        return new Object[][]{
+                {1, 4, 2},
+                {3, 1, 1},
+                {10, 100500, 8}
+        };
     }
 
     @Test
-    public void hammingDistanceOne() {
-        final int executionResult = hammingDistance.hammingDistance(3, 1);
+    @Parameters(method = "data")
+    public void hammingDistance(int firstArg, int secondArg, int expected) {
+        final int executionResult = hammingDistance.hammingDistance(firstArg, secondArg);
 
-        assertThat(executionResult, equalTo(1));
-    }
-
-    @Test
-    public void hammingDistanceEight() {
-        final int executionResult = hammingDistance.hammingDistance(10, 100500);
-
-        assertThat(executionResult, equalTo(8));
+        assertThat(executionResult, equalTo(expected));
     }
 
 }
